@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateUI();
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void Update()
@@ -154,6 +154,11 @@ public class GameManager : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        LockCursor();
     }
 
     public void RestartGame()
